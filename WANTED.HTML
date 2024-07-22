@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,3 +105,111 @@
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanted</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #7fff00, #00ff00, #00ff7f, #00ffff, #007fff, #0000ff, #7f00ff, #ff00ff, #ff007f);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            transform: scale(0.8);
+            text-align: center; /* Center-aligns text inside body */
+            overflow: hidden; /* Prevents scrolling when glitters go off-screen */
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .wanted {
+            font-size: 101px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px #000000;
+            margin-bottom: 20px;
+        }
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 52px;
+            color: #ffffff; /* White color */
+            text-transform: uppercase; /* All caps */
+            font-weight: bold; /* Optional: makes the text bold */
+            line-height: 1.2; /* Adjust line spacing */
+            display: inline-block; /* Adjust this if needed for centering */
+        }
+        .glitter {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: sparkle 1s infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wanted">WANTED</div>
+    <img src="ghie pic.jpg" alt="Wanted Image" class="image">
+    <div class="note">
+        No trespassing in Jollibee Center Building<br>
+        If seen, please contact the admin building immediately!
+    </div>
+
+    <script>
+        function createGlitter() {
+            const glitter = document.createElement('div');
+            glitter.classList.add('glitter');
+            const size = Math.random() * 5 + 2;
+            glitter.style.width = `${size}px`;
+            glitter.style.height = `${size}px`;
+            glitter.style.left = `${Math.random() * window.innerWidth}px`;
+            glitter.style.top = `${Math.random() * window.innerHeight}px`;
+            document.body.appendChild(glitter);
+
+            setTimeout(() => {
+                glitter.remove();
+            }, 3000); // Remove the glitter after 3 seconds
+        }
+
+        function spawnGlitters() {
+            setInterval(createGlitter, 100); // Create a new glitter every 100ms
+        }
+
+        window.onload = spawnGlitters;
+    </script>
+</body>
+</html>
+>>>>>>> 3b6350d110f9a2415f7cd85d7fab103b03da26d6
